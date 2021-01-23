@@ -13,14 +13,30 @@ Great, here's the battle plan:
 editor
   -> view
     -> tui
+      -> text rendering
+      -> header, footer, scroll bars etc rendering
     -> gui
+      -> window, pixel buffer management
+      -> text rendering
+      -> gpu acceleration ???
+      -> ????
   -> logic
     -> file i/o (new, open, save)
+      -> remote editing?
+      -> file search maybe?
+      -> file type recognition
     -> editing operations (undo, redo, copy)
+      * lots of things can be stolen from kakoune, vim, emacs etc to put here
+    -> navigation
+      -> jump to definition, declaration etc.
+      -> see usages of thing
+      -> literal search
     -> state manager (to hold the editor state and broadcast it to different components)
-       -> protocol support for different components
+      -> modal editor???
     -> syntax highlighting
+      -> maybe simple semantic "parsing" (locate definitions, etc)
     -> indentation
+      -> a way to find what the current file is using (tabs, 4 spaces, 2 spaces etc)
     -> scripting
        -> command parser
        -> some script lang for the editor
