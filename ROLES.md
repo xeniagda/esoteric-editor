@@ -7,39 +7,39 @@ You may add more tasks if deemed necessary.
 
 ## TUI
 @sinthorion
-- [] text rendering
-- [] header
-- [] footer
-- [] scroll bars
+- [ ] text rendering
+- [ ] header
+- [ ] footer
+- [ ] scroll bars
 ## GUI
 @razetime
-- [] window, pixel buffer management
-- [] text rendering
-- [] gpu acceleration<sup>*</sup>
+- [ ] window, pixel buffer management
+- [ ] text rendering
+- [ ] gpu acceleration<sup>*</sup>
 ## File I/O (new, open, save)
 @kspalaiologos
-- [] remote editing?
-- [] file search maybe?
-- [] file type recognition
+- [ ] remote editing?
+- [ ] file search maybe?
+- [ ] file type recognition
 ## Actual Text Editing
 @loovjo
-- [] simple editing operations (undo, redo, copy) *Note:* lots of things can be stolen from kakoune, vim, emacs etc to put here
-- [] multiple cursors
-- [] shortcuts
+- [ ] simple editing operations (undo, redo, copy) *Note:* lots of things can be stolen from kakoune, vim, emacs etc to put here
+- [ ] multiple cursors
+- [ ] shortcuts
 ## Navigation
-- [] jump to definition, declaration etc.
-- [] see usages of thing
-- [] literal search
+- [ ] jump to definition, declaration etc.
+- [ ] see usages of thing
+- [ ] literal search
 ## State Manager/Glue (to hold the editor state and broadcast it to different components)
 @ubq323
-- [] modal based editing<sup>*</sup>
+- [ ] modal based editing<sup>*</sup>
 ## Formatting<sup>*</sup>
-- [] maybe simple semantic "parsing" (locate definitions, etc)
-- [] a way to find what indentation the current file is using (tabs, 4 spaces, 2 spaces etc)
+- [ ] maybe simple semantic "parsing" (locate definitions, etc)
+- [ ] a way to find what indentation the current file is using (tabs, 4 spaces, 2 spaces etc)
 ## Scripting API
 @FireCubez
- - [] command parser
- - [] some script lang for the editor
+ - [ ] command parser
+ - [ ] some script lang for the editor
 ## Testing
 @Anima Libera
 
