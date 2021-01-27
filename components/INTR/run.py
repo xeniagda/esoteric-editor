@@ -1,6 +1,9 @@
 import sys
 import threading
 
+def log(*args):
+    print(*args, file=sys.stderr, flush=True)
+
 def read_message():
     sender = ""
     while len(sender) < 4:
@@ -13,16 +16,13 @@ def read_message():
             break
         data += ch
 
-    print(f"got {repr(data)} from {repr(sender)}", file=sys.stderr)
-
     return sender, data
 
 def send_message(to, content):
-    print(f"sending {repr(content)} to {repr(to)}", file=sys.stderr)
     sys.stdout.write(to + "\n" + content + "\n")
     sys.stdout.flush()
 
-print(f"INTR has started!", file=sys.stderr)
+log(f"INTR has started!")
 with open(sys.argv[1], "r") as fr, open(sys.argv[1], "w") as fw:
     def t1():
         while True:
@@ -36,4 +36,5 @@ with open(sys.argv[1], "r") as fr, open(sys.argv[1], "w") as fw:
     while True:
         msg = fr.readline().strip()
 
+        log("Got input", msg)
         send_message("RLAY", "CONS" + msg)

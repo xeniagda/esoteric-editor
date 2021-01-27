@@ -1,5 +1,8 @@
 import sys
 
+def log(*args):
+    print(*args, file=sys.stderr, flush=True)
+
 def read_message():
     sender = ""
     while len(sender) < 4:
@@ -12,12 +15,9 @@ def read_message():
             break
         data += ch
 
-    print(f"got {repr(data)} from {repr(sender)}", file=sys.stderr)
-
     return sender, data
 
 def send_message(to, content):
-    print(f"sending {repr(content)} to {repr(to)}", file=sys.stderr)
     sys.stdout.write(to + "\n")
     sys.stdout.write(content + "\n")
     sys.stdout.flush()
@@ -29,5 +29,6 @@ while True:
 
     msg = "Relaying: " + data[4:]
 
+    log("Relaying", repr(msg))
 
     send_message(to, msg)
