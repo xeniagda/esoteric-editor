@@ -30,7 +30,14 @@ You may add more tasks if deemed necessary.
 - [ ] jump to definition, declaration etc.
 - [ ] see usages of thing
 - [ ] literal search
-## State Manager/Glue (to hold the editor state and broadcast it to different components)
+## Glue
+@loovjo
+- [x] Simple message passing protocol
+- [x] Simple logging
+- [ ] Manual message sending (for debugging)
+- [ ] Message overriding (for debugging)
+- [ ] Some kind of user interface?
+## State Manager (to hold the editor)
 @ubq323
 - [ ] modal based editing<sup>*</sup>
 ## Formatting<sup>*</sup>
