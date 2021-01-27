@@ -31,9 +31,18 @@ You may add more tasks if deemed necessary.
 - [ ] jump to definition, declaration etc.
 - [ ] see usages of thing
 - [ ] literal search
-## State Manager/Glue (to hold the editor state and broadcast it to different components)
+## Glue
+@loovjo
+- [x] Simple message passing protocol
+- [x] Simple logging
+- [ ] Manual message sending (for debugging)
+- [ ] Message overriding (for debugging)
+- [ ] Some kind of user interface?
+## State Manager (to hold the editor)
 @ubq323
 - [ ] modal based editing<sup>*</sup>
+- [ ] protocol for editing (line + column + change?)
+- [ ] protocol for reading part of the buffer
 ## Formatting<sup>*</sup>
 - [ ] maybe simple semantic "parsing" (locate definitions, etc)
 - [ ] a way to find what indentation the current file is using (tabs, 4 spaces, 2 spaces etc)
