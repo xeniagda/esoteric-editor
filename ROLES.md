@@ -40,6 +40,8 @@ You may add more tasks if deemed necessary.
 ## State Manager (to hold the editor)
 @ubq323
 - [ ] modal based editing<sup>*</sup>
+- [ ] protocol for editing (line + column + change?)
+- [ ] protocol for reading part of the buffer
 ## Formatting<sup>*</sup>
 - [ ] maybe simple semantic "parsing" (locate definitions, etc)
 - [ ] a way to find what indentation the current file is using (tabs, 4 spaces, 2 spaces etc)
