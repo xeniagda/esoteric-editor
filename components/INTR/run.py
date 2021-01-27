@@ -19,22 +19,21 @@ def read_message():
 
 def send_message(to, content):
     print(f"sending {repr(content)} to {repr(to)}", file=sys.stderr)
-    sys.stdout.write(to + "\n")
-    sys.stdout.write(content + "\n")
+    sys.stdout.write(to + "\n" + content + "\n")
     sys.stdout.flush()
 
 print(f"INTR has started!", file=sys.stderr)
 with open(sys.argv[1], "r") as fr, open(sys.argv[1], "w") as fw:
     def t1():
         while True:
-            msg = fr.readline()
+            sender, msg = read_message()
 
-            send_message("RLAY", "CONS" + msg)
+            fw.write(f"{sender} sent {repr(msg)}\n")
+            fw.flush()
 
     threading.Thread(target=t1, daemon=True).start()
 
     while True:
-        sender, msg = read_message()
+        msg = fr.readline().strip()
 
-        fw.write(f"{sender} sent {repr(msg)}\n")
-        fw.flush()
+        send_message("RLAY", "CONS" + msg)
