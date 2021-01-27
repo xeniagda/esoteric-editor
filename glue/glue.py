@@ -45,11 +45,11 @@ async def main():
 
     try:
         await asyncio.gather(
-            start_component("python3 run.py /dev/ttys003 | tee /dev/ttys002", "INTR"),
+            start_component("python3 run.py /dev/ttys005", "INTR"),
             start_component("python3 run.py", "RLAY"),
             start_component("python3 run.py", "CONS"),
         )
-    except Exception as e:
+    except:
         traceback.print_exc()
     finally:
         print("bye")
