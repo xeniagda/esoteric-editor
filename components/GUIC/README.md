@@ -12,3 +12,7 @@ Preferably close to vscode's style.
 - icon bar
 - menu bar
 - editing view
+
+# Reference Links for later
+- https://stackoverflow.com/a/36991643/4568534
+- https://www.tutorialspoint.com/tcl-tk/tk_text_widget.htm
