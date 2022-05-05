@@ -2,17 +2,15 @@
 
 Currently maintained by @razetime
 
-## Implementation
-- **Language:** The current language is Tcl. First a normal Tcl/Tk GUI will be made. Snap!(a scratch like language) is also an option, but unlikely.
-- **Interpreter Binary:** https://platform.activestate.com/razetime/Tcl-8.6.11.1-Windows/distributions , You will need to login to activestate to download the requisite binary.
+## Implementation 
+Done in J, version J903.
+
+For the time being, only runnable in the Qt IDE.
 
 ## Style
-Preferably close to vscode's style.
+A relatively simple frame with basic editing support will be made. 
 - File tree
-- icon bar
 - menu bar
 - editing view
 
-# Reference Links for later
-- https://stackoverflow.com/a/36991643/4568534
-- https://www.tutorialspoint.com/tcl-tk/tk_text_widget.htm
+To contribute, see: https://code.jsoftware.com/wiki/Guides/Window_Driver
