@@ -3,18 +3,26 @@ NB. editm demo
 
 
 Text=: topara 0 : 0
-Paragraph of text.
+Send some cool messages in this editor!
 )
 
 NB. =========================================================
 editmdemo_run=: 3 : 0
 wd 'pc editmdemo;pn "Editm Demo"'
 wd 'cc ted editm'
-wd 'set ted stylesheet *color:#00007f;background-color:#ffefd5'
+wd 'menupop File'
+wd '  menu save "Save"'
+wd '  menu open "Open"'
+wd '  menu saveas "Save As.."'
+wd 'menupopz'
+wd 'menupop Edit'
+wd '  menu find "Find"'
+wd '  menu replace "Replace"'
+wd '  menu undo "Undo"'
+wd '  menu redo "Redo"'
+wd 'menupopz'
+wd 'set ted stylesheet *color:#00007f;background-color:#ffefd5;font-family:monospace'
 wd 'set ted text *',Text
-wd 'bin zhs'
-wd 'cc ok button;cn OK'
-wd 'cc close button;cn Close'
 wd 'pmove 100 10 700 500'
 wd 'pshow'
 NB. call these after the pshow:
