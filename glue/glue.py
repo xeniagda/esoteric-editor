@@ -79,20 +79,37 @@ async def start_component(cmd, name):
     stdin_processor.cancel()
     stderr_logger.cancel()
 
-async def main():
-    os.setpgrp() # create new process group, become its leader
+def is_win32():
+    if os.name.lower() == "nt":
+        return True
+    return False
 
+async def main():
+    is_win = is_win32()
+    tty = "dev/ttys005"
+    py_cmd = "python3"
+
+    if not is_win:
+        os.setpgrp() # create new process group, become its leader
+    
     try:
+        if is_win:
+            print("Win32 platform detected!!!")
+            tty = "/dev/cons1"
+            py_cmd = "python"
+
         await asyncio.gather(
-            start_component("python3 run.py /dev/ttys005", "INTR"),
-            start_component("python3 run.py", "RLAY"),
-            start_component("python3 run.py", "CONS"),
+            start_component("{} run.py {}".format(py_cmd, tty), "INTR"),
+            start_component("{} run.py".format(py_cmd), "RLAY"),
+            start_component("{} run.py".format(py_cmd), "CONS"),
         )
     except:
         traceback.print_exc()
     finally:
         print("bye")
-        os.killpg(0, signal.SIGKILL) # kill all processes in my group
+        
+        if not is_win:
+            os.killpg(0, signal.SIGKILL) # kill all processes in my group
 
 if __name__ == "__main__":
     asyncio.run(main())
