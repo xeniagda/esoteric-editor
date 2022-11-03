@@ -25,7 +25,8 @@ You may add more tasks if deemed necessary.
 @loovjo
 - [ ] simple editing operations (undo, redo, copy) *Note:* lots of things can be stolen from kakoune, vim, emacs etc to put here
 - [ ] multiple cursors
-- [ ] shortcuts
+- [ ] Shortcuts
+    - [ ] shortcuts from both Vim and Emacs at the same time<sup>*</sup>
 ## Navigation
 - [ ] jump to definition, declaration etc.
 - [ ] see usages of thing

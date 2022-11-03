@@ -41,3 +41,6 @@ editor
        -> command parser
        -> some script lang for the editor
 ```
+
+## Interested in Compiling/Optimizing?
+Even better! We want this editor to be usable after all. As we choose ~~weird~~ totally reasonable languages, we'll need to make sure the editor still runs. And that's where you come in!
