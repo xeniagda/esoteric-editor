@@ -27,6 +27,9 @@ def send_message(to, content):
 with open("/tmp/out.txt", "w") as f:
     while True:
         sender, data = read_message()
+        if data.endswith("DIE"):
+            log("CONS died :(")
+            exit(255)
 
         log(f"writing {repr(data)}")
         f.write(data + "\n")
