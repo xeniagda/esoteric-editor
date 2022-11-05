@@ -126,7 +126,6 @@ async def main():
         
         if not is_win:
             os.killpg(0, signal.SIGKILL) # kill all processes in my group
-            return
 
         os.kill(0, signal.SIGTERM)
 
