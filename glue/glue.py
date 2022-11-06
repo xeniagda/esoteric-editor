@@ -1,5 +1,4 @@
 import subprocess
-import sys
 import os
 import signal
 import asyncio
@@ -113,21 +112,22 @@ async def main():
             print("Win32 platform detected!!!")
             tty = "/dev/cons1"
             py_cmd = "python"
-
+        
         await asyncio.gather(
             start_component(f"{py_cmd} run.py {tty}", "INTR"),
             start_component(f"{py_cmd} run.py", "RLAY"),
             start_component(f"{py_cmd} run.py", "CONS"),
         )
+        
     except:
         traceback.print_exc()
     finally:
-        print("bye")
+        print(f"{LOG_COLOR}Killing components...")
         
         if not is_win:
             os.killpg(0, signal.SIGKILL) # kill all processes in my group
-
-        os.kill(0, signal.SIGTERM)
+        
+        os.kill(os.getpid(), signal.SIGTERM)
 
 if __name__ == "__main__":
     asyncio.run(main())
